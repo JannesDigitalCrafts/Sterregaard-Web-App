@@ -1,4 +1,5 @@
 import React from 'react';
+import { Navigate } from 'react-router-dom';
 import AccessDenied from '../Routes/AccessDenied';
 
 function AdminRoute({ children }) {
