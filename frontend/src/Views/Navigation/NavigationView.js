@@ -30,7 +30,17 @@ function NavigationView({ children }) {
               <Link to="/inventory/mutate">Muteren</Link>
             </li>
             <li className={location.pathname === '/inventory' ? 'active' : ''}>
-              <Link to="/inventory">Product Informatie</Link>
+              <Link to="/inventory">Producten</Link>
+            </li>
+          </ul>
+
+          <li className="nav-section">Pakketten</li>
+          <ul className="submenu">
+            <li className={location.pathname === '/packages/clients' ? 'active' : ''}>
+              <Link to="/packages/clients">Klanten</Link>
+            </li>
+            <li className={location.pathname === '/packages' ? 'active' : ''}>
+              <Link to="/packages">Pakketten</Link>
             </li>
           </ul>
 
