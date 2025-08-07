@@ -1,0 +1,57 @@
+.settings-users-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.settings-users-container h2 {
+  margin-bottom: 20px;
+}
+
+.user-list-section,
+.add-user-section {
+  margin-top: 30px;
+}
+
+.user-list-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.user-list-section li {
+  background: #f8f8f8;
+  margin: 5px 0;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+input,
+select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.message {
+  color: green;
+  margin-bottom: 10px;
+}

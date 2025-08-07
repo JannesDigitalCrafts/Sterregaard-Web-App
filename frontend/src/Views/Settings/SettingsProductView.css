@@ -1,0 +1,17 @@
+.settings-products-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.settings-products-container h2 {
+  margin-bottom: 16px;
+  font-size: 24px;
+  color: #333;
+}
+
+.settings-products-container p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+}

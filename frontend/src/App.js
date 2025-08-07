@@ -26,7 +26,6 @@ function App() {
           <ProtectedRoute><DashboardView /></ProtectedRoute>
         } />
 
-        {/* Inventory section */}
         <Route path="/inventory" element={
           <ProtectedRoute><InventoryView /></ProtectedRoute>
         } />
@@ -37,7 +36,6 @@ function App() {
           <ProtectedRoute><NewProductView /></ProtectedRoute>
         } />
 
-        {/* Settings section */}
         <Route path="/settings/users" element={
           <AdminRoute><SettingsUserView /></AdminRoute>
         } />
@@ -45,7 +43,6 @@ function App() {
           <AdminRoute><SettingsProductView /></AdminRoute>
         } />
 
-        {/* Catch-all fallback */}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
