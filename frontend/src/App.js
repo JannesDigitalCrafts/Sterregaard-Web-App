@@ -13,7 +13,12 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LoginView />} />
+        <Route path="/" element={
+            localStorage.getItem('loggedIn') === 'true'
+              ? <Navigate to="/dashboard" />
+              : <LoginView />
+          }
+        />
         <Route path="/dashboard" element={
           <ProtectedRoute><DashboardView /></ProtectedRoute>
         } />
