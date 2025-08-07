@@ -18,18 +18,18 @@ function InventoryView() {
   return (
     <NavigationView>
       <div className="inventory-container">
-        <h2>Inventory Overview</h2>
+        <h2>Voorraad Overzicht</h2>
 
         {items.length === 0 ? (
-          <p>No inventory items found.</p>
+          <p>Geen voorraaditems gevonden.</p>
         ) : (
           <table className="inventory-table">
             <thead>
               <tr>
-                <th>Name</th>
-                <th>Quantity</th>
+                <th>Naam</th>
+                <th>Hoeveelheid</th>
                 <th>Type</th>
-                <th>Price (€)</th>
+                <th>Prijs (€)</th>
               </tr>
             </thead>
             <tbody>

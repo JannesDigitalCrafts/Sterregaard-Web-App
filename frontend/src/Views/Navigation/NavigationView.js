@@ -21,26 +21,26 @@ function NavigationView({ children }) {
             <Link to="/dashboard">Dashboard</Link>
           </li>
 
-          <li className="nav-section">Inventory</li>
+          <li className="nav-section">Voorraad</li>
           <ul className="submenu">
             <li className={location.pathname === '/inventory/new' ? 'active' : ''}>
-              <Link to="/inventory/new">New Product</Link>
+              <Link to="/inventory/new">Nieuw Product</Link>
             </li>
             <li className={location.pathname === '/inventory/mutate' ? 'active' : ''}>
-              <Link to="/inventory/mutate">Mutate</Link>
+              <Link to="/inventory/mutate">Muteren</Link>
             </li>
             <li className={location.pathname === '/inventory' ? 'active' : ''}>
-              <Link to="/inventory">Product Info</Link>
+              <Link to="/inventory">Product Informatie</Link>
             </li>
           </ul>
 
-          <li className="nav-section">Settings</li>
+          <li className="nav-section">Instellingen</li>
           <ul className="submenu">
             <li className={location.pathname === '/settings/users' ? 'active' : ''}>
-              <Link to="/settings/users">Users</Link>
+              <Link to="/settings/users">Gebruikers</Link>
             </li>
             <li className={location.pathname === '/settings/products' ? 'active' : ''}>
-              <Link to="/settings/products">Products</Link>
+              <Link to="/settings/products">Producten</Link>
             </li>
           </ul>
         </ul>

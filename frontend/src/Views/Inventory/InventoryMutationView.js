@@ -38,26 +38,26 @@ function InventoryMutationView() {
     const data = await res.json();
 
     if (data.success) {
-      setMessage('Inventory updated successfully.');
+      setMessage('Voorraad succesvol bijgewerkt.');
       setQuantity('');
       setNote('');
-      setReason('Sell');
+      setReason('Verkopen');
     } else {
-      setMessage('Error updating inventory.');
+      setMessage('Fout bij het bijwerken van de voorraad.');
     }
   };
 
   return (
     <NavigationView>
       <div className="mutation-container">
-        <h2>Inventory Mutation</h2>
+        <h2>Voorraad Mutatie</h2>
 
         {message && <p className="mutation-message">{message}</p>}
 
         <form onSubmit={handleSubmit}>
           <label>Product</label>
           <select value={selectedId} onChange={(e) => setSelectedId(e.target.value)} required>
-            <option value="">Select product</option>
+            <option value="">Selecteer product</option>
             {items.map(item => (
               <option key={item.id} value={item.id}>
                 {item.name} ({item.quantity})
@@ -65,7 +65,7 @@ function InventoryMutationView() {
             ))}
           </select>
 
-          <label>Quantity to remove</label>
+          <label>Hoeveelheid te verwijderen</label>
           <input
             type="number"
             min="1"
@@ -74,22 +74,22 @@ function InventoryMutationView() {
             required
           />
 
-          <label>Reason</label>
+          <label>Reden</label>
           <select value={reason} onChange={(e) => setReason(e.target.value)}>
-            <option value="Sell">Sell</option>
-            <option value="Overdue">Overdue</option>
-            <option value="Damage">Damage</option>
+            <option value="Sell">Verkopen</option>
+            <option value="Overdue">Te laat</option>
+            <option value="Damage">Schade</option>
           </select>
 
-          <label>Note (optional)</label>
+          <label>Notitie (optioneel)</label>
           <input
             type="text"
-            placeholder="Add a note"
+            placeholder="Voeg een notitie toe"
             value={note}
             onChange={(e) => setNote(e.target.value)}
           />
 
-          <button type="submit">Apply Mutation</button>
+          <button type="submit">Pas Mutatie Toe</button>
         </form>
       </div>
     </NavigationView>

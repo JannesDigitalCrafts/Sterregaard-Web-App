@@ -38,13 +38,13 @@ function NewProductView() {
   return (
     <NavigationView>
       <div className="new-product-container">
-        <h2>Add New Product</h2>
+        <h2>Voeg Nieuw Product Toe</h2>
         {message && <p className="message">{message}</p>}
         <form onSubmit={handleSubmit}>
           <input
             type="text"
             name="name"
-            placeholder="Product Name"
+            placeholder="Product Naam"
             value={product.name}
             onChange={handleChange}
             required
@@ -52,7 +52,7 @@ function NewProductView() {
           <input
             type="number"
             name="quantity"
-            placeholder="Quantity"
+            placeholder="Hoeveelheid"
             value={product.quantity}
             onChange={handleChange}
             required
@@ -60,19 +60,19 @@ function NewProductView() {
           <input
             type="text"
             name="type"
-            placeholder="Type (e.g. dairy, produce)"
+            placeholder="Type (bijv. kg, stuks)"
             value={product.type}
             onChange={handleChange}
           />
           <input
             type="number"
             name="price"
-            placeholder="Price (€)"
+            placeholder="Prijs (€)"
             step="0.01"
             value={product.price}
             onChange={handleChange}
           />
-          <button type="submit">Add Product</button>
+          <button type="submit">Voeg Product Toe</button>
         </form>
       </div>
     </NavigationView>

@@ -40,10 +40,10 @@ function SettingsUserView() {
   return (
     <NavigationView>
       <div className="settings-users-container">
-        <h2>User Management</h2>
+        <h2>Gebruikersbeheer</h2>
 
         <div className="user-list-section">
-          <h3>All Users</h3>
+          <h3>Alle Gebruikers</h3>
           <ul>
             {users.map(user => (
               <li key={user.id}>
@@ -54,19 +54,19 @@ function SettingsUserView() {
         </div>
 
         <div className="add-user-section">
-          <h3>Add New User</h3>
+          <h3>Voeg Nieuwe Gebruiker Toe</h3>
           {message && <p className="message">{message}</p>}
           <form onSubmit={handleAddUser}>
             <input
               type="text"
-              placeholder="Username"
+              placeholder="Gebruikersnaam"
               value={newUser.username}
               onChange={(e) => setNewUser({ ...newUser, username: e.target.value })}
               required
             />
             <input
               type="password"
-              placeholder="Password"
+              placeholder="Wachtwoord"
               value={newUser.password}
               onChange={(e) => setNewUser({ ...newUser, password: e.target.value })}
               required
@@ -78,7 +78,7 @@ function SettingsUserView() {
               <option value="staff">Staff</option>
               <option value="admin">Admin</option>
             </select>
-            <button type="submit">Add User</button>
+            <button type="submit">Voeg Gebruiker Toe</button>
           </form>
         </div>
       </div>

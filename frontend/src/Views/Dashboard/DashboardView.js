@@ -6,7 +6,7 @@ function DashboardView() {
   return (
     <NavigationView>
       <h1 className="title">Dashboard</h1>
-      <p>Welcome to the dashboard.</p>
+      <p>Welkom op het dashboard.</p>
     </NavigationView>
   );
 }

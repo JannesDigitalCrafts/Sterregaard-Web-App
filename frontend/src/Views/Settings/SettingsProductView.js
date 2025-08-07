@@ -5,9 +5,9 @@ function SettingsProductView() {
   return (
     <NavigationView>
       <div style={{ maxWidth: '600px', margin: '0 auto' }}>
-        <h2>Product Settings</h2>
-        <p>This section will allow managing product categories, types, and defaults.</p>
-        <p>Coming soon...</p>
+        <h2>Product Instellingen</h2>
+        <p>Deze sectie stelt u in staat om productcategorieën, -typen en -standaarden te beheren.</p>
+        <p>Binnenkort beschikbaar...</p>
       </div>
     </NavigationView>
   );
