@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import NavigationView from '../Layout/NavigationView';
+import NavigationView from '../../Components/Navigation/NavigationView';
 import './SettingsView.css';
 
 function SettingsView() {

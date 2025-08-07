@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import AccessDenied from '../Routes/AccessDenied';
+import AccessDenied from './AccessDenied';
 
 function AdminRoute({ children }) {
   const isLoggedIn = localStorage.getItem('loggedIn') === 'true';

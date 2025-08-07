@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
-import LoginView from './Routes/LoginView';
-import DashboardView from './Routes/DashboardView';
-import SettingsView from './Routes/SettingsView';
-import InventoryView from './Routes/InventoryView';
+import LoginView from './Views/Login/LoginView';
+import DashboardView from './Views/Dashboard/DashboardView';
+import SettingsView from './Views/Settings/SettingsView';
+import InventoryView from './Views/Inventory/InventoryView';
 import ProtectedRoute from './Components/ProtectedRoute';
 import AdminRoute from './Components/AdminRoute';
 
