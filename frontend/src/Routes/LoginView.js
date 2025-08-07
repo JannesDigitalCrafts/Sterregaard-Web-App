@@ -11,7 +11,7 @@ function LoginView() {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    const res = await fetch(`${process.env.REACT_APP_API_URL}/api/login`, {
+    const res = await fetch(`${'https://sterregaard-web-app.onrender.com'}/api/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),
