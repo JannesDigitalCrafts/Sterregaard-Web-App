@@ -37,6 +37,26 @@ function InventoryView() {
     setMessage(data.message);
   };
 
+  const updateQuantity = async (id, change) => {
+    const note = prompt(`Why are you adjusting quantity by ${change}?`);
+
+    if (!note) return;
+
+    const res = await fetch(`https://sterregaard-web-app.onrender.com/api/inventory/${id}/update`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ quantityChange: change, note }),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      fetchInventory();
+    } else {
+      alert('Failed to update quantity');
+    }
+  };
+
   return (
     <NavigationView>
       <div className="inventory-container">
@@ -81,7 +101,11 @@ function InventoryView() {
           <ul className="inventory-list">
             {inventory.map((item) => (
               <li key={item.id}>
-                <strong>{item.name}</strong> – {item.quantity} {item.type} – €{item.price}
+                <strong>{item.name}</strong> – {item.quantity} {item.type} – €{item.price.toFixed(2)}
+                <div className="actions">
+                  <button onClick={() => updateQuantity(item.id, -1)}>-</button>
+                  <button onClick={() => updateQuantity(item.id, 1)}>+</button>
+                </div>
               </li>
             ))}
           </ul>
