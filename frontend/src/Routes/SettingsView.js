@@ -44,33 +44,44 @@ function SettingsView() {
 
         <div className="section">
           <h3>All Users</h3>
-          <ul className="user-list">
+            <ul className="user-list">
             {users.map((user) => (
-              <li key={user.id}>{user.username}</li>
+                <li key={user.id}>
+                {user.username} <span className="user-role">({user.role})</span>
+                </li>
             ))}
-          </ul>
+            </ul>
         </div>
 
         <div className="section">
           <h3>Add New User</h3>
           {message && <p className="message">{message}</p>}
-          <form onSubmit={handleAddUser}>
-            <input
-              type="text"
-              placeholder="Username"
-              value={newUser.username}
-              onChange={(e) => setNewUser({ ...newUser, username: e.target.value })}
-              required
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              value={newUser.password}
-              onChange={(e) => setNewUser({ ...newUser, password: e.target.value })}
-              required
-            />
-            <button type="submit">Add User</button>
-          </form>
+            <form onSubmit={handleAddUser}>
+                <input
+                    type="text"
+                    placeholder="Username"
+                    value={newUser.username}
+                    onChange={(e) => setNewUser({ ...newUser, username: e.target.value })}
+                    required
+                />
+                <input
+                    type="password"
+                    placeholder="Password"
+                    value={newUser.password}
+                    onChange={(e) => setNewUser({ ...newUser, password: e.target.value })}
+                    required
+                />
+                <select
+                    value={newUser.role}
+                    onChange={(e) => setNewUser({ ...newUser, role: e.target.value })}
+                    required
+                >
+                    <option value="">Select Role</option>
+                    <option value="admin">Admin</option>
+                    <option value="staff">Staff</option>
+                </select>
+                <button type="submit">Add User</button>
+            </form>
         </div>
       </div>
     </NavigationView>

@@ -6,6 +6,8 @@ import DashboardView from './Routes/DashboardView';
 import SettingsView from './Routes/SettingsView';
 import InventoryView from './Routes/InventoryView';
 import ProtectedRoute from './Components/ProtectedRoute';
+import AdminRoute from './Components/AdminRoute';
+
 
 function App() {
   return (
@@ -19,7 +21,7 @@ function App() {
           <ProtectedRoute><InventoryView /></ProtectedRoute>
         } />
         <Route path="/settings" element={
-          <ProtectedRoute><SettingsView /></ProtectedRoute>
+          <AdminRoute><SettingsView /></AdminRoute>
         } />
         <Route path="*" element={
           <Navigate to="/" />

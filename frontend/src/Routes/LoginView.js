@@ -21,6 +21,7 @@ function LoginView() {
 
     if (data.success) {
       localStorage.setItem('loggedIn', 'true');
+      localStorage.setItem('role', data.role);
       navigate('/dashboard');
     } else {
       setError(data.message);

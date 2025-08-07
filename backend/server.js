@@ -16,26 +16,29 @@ app.post('/api/login', (req, res) => {
   `).get(username, password);
 
   if (user) {
-    res.json({ success: true, message: 'Login successful' });
+    res.json({ success: true, role: user.role, message: 'Login successful' });
   } else {
     res.status(401).json({ success: false, message: 'Invalid credentials' });
   }
 });
 
 app.get('/api/users', (req, res) => {
-  const users = db.prepare('SELECT id, username FROM users').all();
+  const users = db.prepare('SELECT id, username, role FROM users').all();
   res.json(users);
 });
 
 app.post('/api/users', (req, res) => {
-  const { username, password } = req.body;
+  const { username, password, role } = req.body;
+
   try {
-    db.prepare('INSERT INTO users (username, password) VALUES (?, ?)').run(username, password);
+    db.prepare('INSERT INTO users (username, password, role) VALUES (?, ?, ?)')
+      .run(username, password, role || 'staff');
     res.status(201).json({ success: true, message: 'User added' });
   } catch (err) {
     res.status(400).json({ success: false, message: 'Username already exists' });
   }
 });
+
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
