@@ -1,8 +1,9 @@
 const express = require('express');
 const db = require('./db');
-const app = express();
-const PORT = 3001;
 const cors = require('cors');
+
+const app = express();
+const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
@@ -10,7 +11,9 @@ app.use(express.json());
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body;
 
-  const user = db.prepare(`SELECT * FROM users WHERE username = ? AND password = ?`).get(username, password);
+  const user = db.prepare(`
+    SELECT * FROM users WHERE username = ? AND password = ?
+  `).get(username, password);
 
   if (user) {
     res.json({ success: true, message: 'Login successful' });
