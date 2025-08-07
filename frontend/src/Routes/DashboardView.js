@@ -1,12 +1,13 @@
-// frontend/src/Routes/DashboardView.js
 import React from 'react';
+import NavigationView from '../Layout/NavigationView';
+import './DashboardView.css';
 
 function DashboardView() {
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold mb-4">Welcome to the Dashboard</h1>
-      <p>You are now logged in.</p>
-    </div>
+    <NavigationView>
+      <h1 className="title">Dashboard</h1>
+      <p>Welcome to the dashboard.</p>
+    </NavigationView>
   );
 }
 
