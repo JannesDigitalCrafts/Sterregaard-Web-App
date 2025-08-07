@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 import LoginView from './Routes/LoginView';
 import DashboardView from './Routes/DashboardView';
@@ -20,6 +20,9 @@ function App() {
         } />
         <Route path="/settings" element={
           <ProtectedRoute><SettingsView /></ProtectedRoute>
+        } />
+        <Route path="*" element={
+          <Navigate to="/" />
         } />
       </Routes>
     </Router>
