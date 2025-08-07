@@ -1,4 +1,4 @@
-.layout {
+.app-container {
   display: flex;
   min-height: 100vh;
   background-color: #f5f5f5;
@@ -11,30 +11,52 @@
   box-shadow: 2px 0 6px rgba(0, 0, 0, 0.05);
 }
 
-.brand {
+.sidebar h2 {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 30px;
 }
 
-.nav {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.nav-link {
+.sidebar li {
+  margin: 6px 0;
+}
+
+.nav-section {
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 10px 0 5px;
+  color: #555;
+  cursor: default;
+}
+
+.submenu {
+  padding-left: 16px;
+}
+
+.submenu li {
+  margin: 4px 0;
+}
+
+a {
   text-decoration: none;
   color: #333;
-  padding: 10px;
+  display: block;
+  padding: 8px 12px;
   border-radius: 4px;
+  transition: background-color 0.2s;
 }
 
-.nav-link:hover {
+a:hover {
   background-color: #eee;
 }
 
-.nav-link.active {
+a.active {
   background-color: #007bff;
   color: white;
 }
