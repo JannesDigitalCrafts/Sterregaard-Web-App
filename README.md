@@ -1,57 +1,112 @@
-Sterregaard Web App Documentation
-A simple inventory and user management system for Sterregaard, built with React (frontend),
-Express (backend), and SQLite (database).
-Tech Stack:
-- Frontend: React.js
-- Backend: Node.js + Express
-- Database: SQLite (via better-sqlite3)
-- Hosting: Render.com
-Features:
-• User authentication with roles (admin, staff)
-• Role-based route protection
-• Inventory product listing
-• Add/update/mutate product quantities
-• History tracking per inventory item
-• Admin user management
-• Clean sidebar navigation layout
-Folder Structure:
-/frontend
-■■■ src
-■ ■■■ Views
-■ ■ ■■■ Dashboard
-■ ■ ■■■ Inventory
-■ ■ ■■■ Login
-■ ■ ■■■ Navigation
-■ ■ ■■■ Settings
-■ ■■■ Guards
-■ ■■■ App.js
-■ ■■■ index.js
-/backend
-■■■ server.js
-■■■ db.js
-Installation:
-1. Clone the Repository
+# 🌿 Sterregaard Web App
+
+A simple inventory and user management system for Sterregaard, built using:
+
+- ⚛️ **Frontend**: React.js
+- 🚀 **Backend**: Node.js + Express
+- 🗄️ **Database**: SQLite (via `better-sqlite3`)
+- ☁️ **Hosting**: Render.com
+
+---
+
+## 🔧 Features
+
+- ✅ User authentication with role support (`admin`, `staff`)
+- ✅ Protected routes for admins and staff
+- ✅ Inventory management:
+  - Add/update/delete products
+  - Adjust quantity with mutation reason (sell, damage, overdue, etc.)
+  - View full mutation history
+- ✅ Admin settings:
+  - Manage users
+  - (Soon) Manage product categories/types
+- ✅ Clean sidebar navigation layout
+- ✅ Fully structured frontend/backend folder setup
+
+---
+
+## 📁 Project Structure
+
+```
+Sterregaard-Web-App/
+│
+├── frontend/
+│   ├── Views/
+│   │   ├── Dashboard/
+│   │   ├── Inventory/
+│   │   ├── Login/
+│   │   ├── Navigation/
+│   │   └── Settings/
+│   ├── Guards/             # AdminRoute / ProtectedRoute
+│   ├── App.js
+│   └── index.js
+│
+├── backend/
+│   ├── server.js
+│   └── db.js
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/JannesDigitalCrafts/Sterregaard-Web-App.git
 cd Sterregaard-Web-App
-2. Backend Setup
+```
+
+### 2. Backend Setup
+
+```bash
 cd backend
 npm install
 node server.js
-3. Frontend Setup
+```
+
+### 3. Frontend Setup
+
+```bash
 cd ../frontend
 npm install
 npm start
-Default Admin:
-Username: admin | Password: admin123 | Role: admin
-Render Redirect Rule:
-Source: /.*
+```
+
+---
+
+## 🧪 Default Credentials
+
+| Role  | Username | Password  |
+|-------|----------|-----------|
+| Admin | admin    | admin123  |
+
+---
+
+## 🌐 Hosting (Render Setup)
+
+For proper SPA routing in Render.com, add the following **redirect rule**:
+
+```
+Source:      /*
 Destination: /index.html
-TODO / Ideas:
-• Inventory quantity adjustment ■
-• History log per item ■
-• Role-based route guarding ■
-• Product categories/types in settings ■
-• Export inventory as CSV ■
-• Audit logs & user actions ■
-License:
-MIT License
+Status:      200
+```
+
+---
+
+## 📌 TODO / Roadmap
+
+- [x] Inventory quantity adjustment
+- [x] History log per item
+- [x] Role-based route guarding
+- [x] Admin user management
+- [ ] Export inventory as CSV
+- [ ] Product types/categories management
+- [ ] Audit logs & user action tracking
+
+---
+
+## 📄 License
+
+MIT License — _Free to use for any purpose_
