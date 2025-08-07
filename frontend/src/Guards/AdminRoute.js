@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import AccessDenied from './AccessDenied';
+import AccessDeniedView from '../Views/AccessDenied/AccessDeniedView';
 
 function AdminRoute({ children }) {
   const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
@@ -11,7 +11,7 @@ function AdminRoute({ children }) {
   }
 
   if (role !== 'admin') {
-    return <AccessDenied />;
+    return <AccessDeniedView />;
   }
 
   return children;

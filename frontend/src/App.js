@@ -5,8 +5,8 @@ import LoginView from './Views/Login/LoginView';
 import DashboardView from './Views/Dashboard/DashboardView';
 import SettingsView from './Views/Settings/SettingsView';
 import InventoryView from './Views/Inventory/InventoryView';
-import ProtectedRoute from './Components/ProtectedRoute';
-import AdminRoute from './Components/AdminRoute';
+import ProtectedRoute from './Guards/ProtectedRoute';
+import AdminRoute from './Guards/AdminRoute';
 
 
 function App() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import NavigationView from '../../Components/Navigation/NavigationView';
+import NavigationView from '../Navigation/NavigationView';
 import './DashboardView.css';
 
 function DashboardView() {
