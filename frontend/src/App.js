@@ -3,17 +3,24 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import LoginView from './Routes/LoginView';
 import DashboardView from './Routes/DashboardView';
-import InventoryView from './Routes/InventoryView';
 import SettingsView from './Routes/SettingsView';
+import InventoryView from './Routes/InventoryView';
+import ProtectedRoute from './Components/ProtectedRoute';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<LoginView />} />
-        <Route path="/dashboard" element={<DashboardView />} />
-        <Route path="/inventory" element={<InventoryView />} />
-        <Route path="/settings" element={<SettingsView />} />
+        <Route path="/dashboard" element={
+          <ProtectedRoute><DashboardView /></ProtectedRoute>
+        } />
+        <Route path="/inventory" element={
+          <ProtectedRoute><InventoryView /></ProtectedRoute>
+        } />
+        <Route path="/settings" element={
+          <ProtectedRoute><SettingsView /></ProtectedRoute>
+        } />
       </Routes>
     </Router>
   );
