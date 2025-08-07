@@ -1,12 +1,78 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import NavigationView from '../Layout/NavigationView';
 import './SettingsView.css';
 
 function SettingsView() {
+  const [users, setUsers] = useState([]);
+  const [newUser, setNewUser] = useState({ username: '', password: '' });
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    fetchUsers();
+  }, []);
+
+  const fetchUsers = async () => {
+    const res = await fetch('https://sterregaard-web-app.onrender.com/api/users');
+    const data = await res.json();
+    setUsers(data);
+  };
+
+  const handleAddUser = async (e) => {
+    e.preventDefault();
+    setMessage('');
+
+    const res = await fetch('https://sterregaard-web-app.onrender.com/api/users', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newUser),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      setNewUser({ username: '', password: '' });
+      fetchUsers();
+    }
+
+    setMessage(data.message);
+  };
+
   return (
     <NavigationView>
-      <h1 className="title">Settings</h1>
-      <p>Here you can change app settings.</p>
+      <div className="settings-container">
+        <h2>Settings</h2>
+
+        <div className="section">
+          <h3>All Users</h3>
+          <ul className="user-list">
+            {users.map((user) => (
+              <li key={user.id}>{user.username}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="section">
+          <h3>Add New User</h3>
+          {message && <p className="message">{message}</p>}
+          <form onSubmit={handleAddUser}>
+            <input
+              type="text"
+              placeholder="Username"
+              value={newUser.username}
+              onChange={(e) => setNewUser({ ...newUser, username: e.target.value })}
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={newUser.password}
+              onChange={(e) => setNewUser({ ...newUser, password: e.target.value })}
+              required
+            />
+            <button type="submit">Add User</button>
+          </form>
+        </div>
+      </div>
     </NavigationView>
   );
 }

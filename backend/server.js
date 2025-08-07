@@ -22,6 +22,21 @@ app.post('/api/login', (req, res) => {
   }
 });
 
+app.get('/api/users', (req, res) => {
+  const users = db.prepare('SELECT id, username FROM users').all();
+  res.json(users);
+});
+
+app.post('/api/users', (req, res) => {
+  const { username, password } = req.body;
+  try {
+    db.prepare('INSERT INTO users (username, password) VALUES (?, ?)').run(username, password);
+    res.status(201).json({ success: true, message: 'User added' });
+  } catch (err) {
+    res.status(400).json({ success: false, message: 'Username already exists' });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
