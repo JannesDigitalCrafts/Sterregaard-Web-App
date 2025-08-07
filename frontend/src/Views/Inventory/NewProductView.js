@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import NavigationView from '../../Components/Navigation/NavigationView';
+import NavigationView from '../Navigation/NavigationView';
 import './NewProductView.css';
 
 function NewProductView() {

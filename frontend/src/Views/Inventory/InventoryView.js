@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import NavigationView from '../../Components/Navigation/NavigationView';
+import NavigationView from '../Navigation/NavigationView';
 import './InventoryView.css';
 
 function InventoryView() {
